@@ -64,6 +64,10 @@ export default function Main({ query }) {
   const [isLoadingDetails, setIsLoadingDetails] = useState(false);
   const [isErrorDetails, setIsErrorDetails] = useState(null);
 
+  useEffect(() => {
+    document.title = selectedMovie?.name || "usePopcorn";
+  }, [selectedMovie]);
+
   // useEffect for the first render of the page with top-10 films
   useEffect(() => {
     setIsLoadingList(true);
